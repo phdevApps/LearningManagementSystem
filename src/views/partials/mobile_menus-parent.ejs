@@ -1,0 +1,178 @@
+<div class="mobile-menus">
+  <!-- 4. sidebar menu -->
+  <div class="header-menu sidebar-menu">
+
+    <div class="sidebar-menu__logobox">
+      <div class="sidebar-menu__logobox__img">
+        <img src="/imgs/lms-icon.png" alt="">
+      </div>
+      <div class="sidebar-menu__logobox__textbox">
+        <span>LMS</span>
+        <span>Learning Management System</span>
+      </div>
+    </div>
+
+    <hr>
+    <!-- sidebar body -->
+    <!-- sidebar body -->
+    <div class="sidebar__body">
+
+      <ul class="sidebar__body__menu">
+        <!-- sidebar menu label -->
+        <span class="sidebar__body__menu__menu-label">General</span>
+        <li>
+
+          <a href="/home" class="<%- page_title?.toLowerCase()=='home' ? 'selected' : page_title -%>">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+
+        </li>
+        <li>
+          <a href="/scoreboard" class="<%- page_title?.toLowerCase()=='scoreboard' ? 'selected' : page_title -%>">
+            <i class="fas fa-star"></i>
+            <span>Scoreboard</span>
+          </a>
+        </li>
+        <li class="<%- page_title?.split('.')[0]?.toLowerCase()=='elearning' ? 'highlight' : page_title -%>">
+          <a class="sidebar__body__menu__btn sidebar__body__menu__elearning-btn">
+            <i class="fa-solid fa-book"></i>
+            <span>E-Learning <i class="fa-solid fa-angle-down"></i></span>
+          </a>
+        </li>
+
+        <ul class="sidebar__body__sub-menu elearning-sub-menu">
+          <!-- sidebar side menu outer border -->
+          <div class="border">
+            <li>
+              <a href="/elearning/quizzes" class="<%- page_title?.split('.')[1]?.toLowerCase()=='quizzes' ? 'selected' : page_title -%>">
+                <span>Quizzes</span>
+              </a>
+            </li>
+            <li>
+              <a href="/elearning/assignments" class="<%- page_title?.split('.')[1]?.toLowerCase()=='assignments' ? 'selected' : page_title -%>">
+                <span>Assignments</span>
+              </a>
+            </li>
+            <li>
+              <a href="/elearning/materials" class="<%- page_title?.split('.')[1]?.toLowerCase()=='materials' ? 'selected' : page_title -%>">
+                <span>Materials</span>
+              </a>
+            </li>
+          </div>
+        </ul>
+
+        <li class="<%- page_title?.split('.')[0]?.toLowerCase()=='semester_work' ? 'highlight' : page_title -%>">
+          <a class="sidebar__body__menu__btn sidebar__body__menu__semesterwork-btn">
+            <i class="fa-solid fa-chart-simple"></i>
+            <span>Semester Work <i class="fa-solid fa-angle-down"></i></span>
+          </a>
+        </li>
+
+        <ul class="sidebar__body__sub-menu semesterwork-sub-menu">
+          <div class="border">
+            <li>
+              <a href="/semester_work/schedule" class="<%- page_title?.split('.')[1]?.toLowerCase()=='schedule' ? 'selected' : page_title -%>">
+                <span>Schedule</span>
+              </a>
+            </li>
+            <li>
+              <a href="/semester_work/gradesbook" class="<%- page_title?.split('.')[1]?.toLowerCase()=='gradesbook' ? 'selected' : page_title -%>">
+                <span>Grades book</span>
+              </a>
+            </li>
+            <li>
+              <a href="/semester_work/absence" class="<%- page_title?.split('.')[1]?.toLowerCase()=='absence' ? 'selected' : page_title -%>">
+                <span>Absence</span>
+              </a>
+            </li>
+          </div>
+        </ul>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 5. navbar menu -->
+  <div class="header-menu navbar-menu">
+    <!-- details -->
+    <div class="navbar-menu__details">
+      <div class="navbar-menu__details__img">
+        <img src="/imgs/user.jpg">
+      </div>
+      <h3 class="navbar-menu__details__name">Student Name</h3>
+      <h4 class="navbar-menu__details__id">Student ID</h4>
+      <button class="navbar-menu__details__btn">Edit profile</button>
+    </div>
+
+    <hr class="outer-seperator">
+
+    <!-- links -->
+    <ul class="navbar-menu__controls">
+      <li>
+        <a href="/settings">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings <i class="fa-solid fa-angle-right"></i></span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-bell"></i>
+          <span>Notification <i class="fa-solid fa-angle-right"></i></span>
+        </a>
+      </li>
+
+      <hr class="inner-seperator">
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-calendar"></i>
+          <span>Calendar <i class="fa-solid fa-angle-right"></i></span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-wallet"></i>
+          <span>Financial <i class="fa-solid fa-angle-right"></i></span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-fire"></i>
+          <span>Streaks <i class="fa-solid fa-angle-right"></i></span>
+        </a>
+      </li>
+
+      <hr class="inner-seperator">
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>Help <i class="fa-solid fa-angle-right"></i></span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-lightbulb"></i>
+          <span>Suggestions <i class="fa-solid fa-angle-right"></i></span>
+        </a>
+      </li>
+
+      <hr class="inner-seperator">
+
+      <li>
+        <a href="/logout">
+          <i class="fa-solid fa-sign-out"></i>
+          <span>Sign out <i class="fa-solid fa-angle-right"></i></span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="navbar-menu__version">Website Version 00.01</div>
+
+  </div>
+
+</div>

@@ -1,0 +1,113 @@
+
+ 
+
+            <!-- First Component | Quiz system -->
+            <div class="quiz-wrapper">
+
+                <!-- section 1 -->
+                <div class="quiz-wrapper__info-section">
+
+                    <div class="quiz-wrapper__info-section__title">
+
+                        <div class="quiz-wrapper__info-section__title__category-name">
+                            Quiz 2
+                            <!-- <span class="quiz-wrapper__info-section__title__category-name__timer">12:20</span> -->
+                            <span data-element="quiz-timer">
+                                <span class="mins">12</span> : <span class="secs">01</span>
+                            </span>
+                        </div>
+
+                        <div class="quiz-wrapper__info-section__title__sub-title">
+                            Telecommunication technology 2
+                        </div>
+                        <div class="quiz-wrapper__info-section__title__questions-count">
+                            <span data-answeredQuestions="">0</span> of <strong><span data-allQuestions="">0</span>
+                                Questions</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="quiz-wrapper__info-section__navigation">
+                        <div class="quiz-wrapper__info-section__navigation__nav-filter">
+                            <div data-nav_filter="all" class="selected">All</div>
+                            <div data-nav_filter="tagged">Tagged</div>
+                            <div data-nav_filter="unanswered">Unanswered</div>
+                        </div>
+
+                        <div class="quiz-wrapper__info-section__navigation__bullets" data-questionsNavigation=""></div>
+
+                        <button class="quiz-wrapper__info-section__navigation__update-feed" data-updateFeedBtn="">
+                            Update Feed
+                        </button>
+
+                        <button class="quiz-wrapper__info-section__navigation__submit" data-allowed="false"
+                            data-submitBtn="">
+                            Submit
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- section 2 -->
+                <div class="quiz-wrapper__quesion-section" data-quesiotnsContainer="">
+
+                    <!-- Questions here -->
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Result popup -->
+            <span class="overlay"></span>
+            <div class="results-pop" data-popupModel="">
+                <h2>The Quiz Has Been Finished</h2>
+                <div class="wrap">
+
+                    <div class="img-container">
+                        <div class="img">
+                            <img src="/imgs/done-character.png">
+                        </div>
+                        <div class="score" data-totalScore="">98.00%</div>
+                    </div>
+
+                    <ul class="analysis">
+                        <li>
+                            <div class="icon right">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span>
+                                <span data-rightCount="">0</span>
+                                Right Questions
+                            </span>
+                        </li>
+                        <li>
+                            <div class="icon wrong">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                            <span>
+                                <span data-wrongCount="">0</span>
+                                Wrong Questions
+                            </span>
+                        </li>
+                        <li>
+                            <div class="icon flag">
+                                <i class="fa-solid fa-flag"></i>
+                            </div>
+                            <span>
+                                <span data-flaggedCount="">0</span>
+                                Flagged Questions
+                            </span>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="btn-container">
+                    <button>Back To Home</button>
+                </div>
+            
+            <!-- Content Section Ends -->
+<script src="/js/normal-quiz.js" defer></script>

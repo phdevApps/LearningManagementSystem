@@ -1,0 +1,107 @@
+<!-- content -->
+<div class="materials_container">
+  
+  <div class="main__title">
+    <span>Summary</span>
+  </div>
+  
+  <div class="main__materials__summary">
+  
+    <div class="main__materials__summary__summary-01">
+  
+      <div>
+        <div class="main__materials__summary__summary-01__icon">
+          <div class="fa-solid fa-note-sticky"></div>
+        </div>
+        Sheets
+        <i class="fa-solid fa-circle-info"></i>
+      </div>
+  
+      <div>
+        <div class="main__materials__summary__summary-01__icon">
+          <div class="fa-solid fa-note-sticky"></div>
+        </div>
+        Sheets
+        <i class="fa-solid fa-circle-info"></i>
+      </div>
+  
+    </div>
+  
+    <div class="main__materials__summary__summary-01">
+  
+      <div>
+        <div class="main__materials__summary__summary-01__icon">
+          <div class="fa-solid fa-note-sticky"></div>
+        </div>
+        Sheets
+        <i class="fa-solid fa-circle-info"></i>
+      </div>
+  
+      <div>
+        <div class="main__materials__summary__summary-01__icon">
+          <div class="fa-solid fa-note-sticky"></div>
+        </div>
+        Sheets
+        <i class="fa-solid fa-circle-info"></i>
+      </div>
+  
+    </div>
+  
+  </div>
+  
+  
+  <div class="main__title">
+    <span>Materials</span>
+  </div>
+  
+  <div class="main__materials">
+  
+  
+    <%- data.map((item,index)=>{ return `
+      <div class="main__materials__subject">
+        <div class="main__materials__subject__icon">
+          <i class="fa-solid fa-folder"></i>
+        </div>
+  
+        <div dat-id=${item._id} class="main__materials__subject__text">
+          <span>${item.code.toUpperCase() + ' - ' + item.subject_name}</span>
+          <span>07 Files</span>
+        </div>
+      </div>
+  
+      `
+      },{}).join(' ') -%>
+  
+  </div>
+  
+  <div class="main__title">
+    <span>Others</span>
+  </div>
+  
+  <div class="main__extras">
+    <div class="main__extras__element">
+      <i class="fa-solid fa-book"></i>
+      <span>Question Bank</span>
+    </div>
+    <div class="main__extras__element">
+      <i class="fa-solid fa-tag"></i>
+      <span>Pinned Files</span>
+    </div>
+    <div class="main__extras__element">
+      <i class="fa-solid fa-share"></i>
+      <span>Shared Files</span>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- preloader -->
+<!-- <div class="preloader-overlay">
+  <div class="lds-facebook">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div> 
+-->

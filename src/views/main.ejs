@@ -1,0 +1,48 @@
+<%- include('partials/head' , {
+current_page: current_page
+}) %>
+
+<% if (secret) { %>
+<% if (fs.existsSync("src/views/pages/" + current_page.replaceAll(/\./ig, '/') + '.ejs')) { %>
+<%- include('pages/' + current_page.replaceAll(/\./ig, '/')) -%>
+<% } else { %>
+<div class="page__<%= current_page.split('.')[0] %>">
+  <h1 style="color:black; font-Weight:900;"> no content for "
+    <%- current_page -%>" yet
+  </h1>
+</div>
+
+<% } %>
+<% } else { %>
+
+<%- include('partials/sideNav' + ((userinfo?.type !== 'student') ? `-${userinfo?.type}` : "") , {
+page_title: current_page
+}) %>
+<main class="wrapper">
+  <%- include('partials/topNav' + ((userinfo?.type !== 'student') ? `-${userinfo?.type}` : "")) %>
+  <div class="main page__<%= current_page.split('.')[0] %><%= current_page.split('.')[1] %>">
+    <% if (fs.existsSync("src/views/pages/" + current_page.replaceAll(/\./ig, '/') + ((userinfo?.type !== 'student') ? `-${userinfo?.type}` : "") +  '.ejs')) { %>
+
+    <%- include('pages/' + current_page.replaceAll(/\./ig, '/') + ((userinfo?.type !== 'student') ? `-${userinfo?.type}` : ""))-%>
+
+    <% } else { %>
+    <div style="display:flex;justify-content:center;align-items:center;height:100%" class="empty__page">
+      <h1 style="color:black; font-Weight:900; font-size:1rem;"> no
+
+        <%- "content for " + current_page + ((userinfo?.type !== 'student') ? `-${userinfo?.type}` : "") + " yet" -%>
+
+      </h1>
+    </div>
+
+    <% } %>
+  </div>
+
+</main>
+<%- include('partials/activity_center') %>
+<%- include('partials/mobile_menus' + ((userinfo?.type !== 'student') ? `-${userinfo?.type}` : ""), {
+page_title: current_page
+}) %>
+
+<% } %>
+<%- include('partials/footer') %>
+

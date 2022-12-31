@@ -1,0 +1,60 @@
+
+<!-- content -->
+
+<div class="main__controls">
+  <span>Assignments</span>
+  <div class="main__controls__view">
+    <button>
+      <i class="fa-solid fa-list active"></i>
+    </button>
+    <button>
+      <i class="fa-solid fa-box"></i>
+    </button>
+  </div>
+</div>
+
+
+<div class="main__materials">
+
+
+  <%- data.map((item,index)=>{ 
+    
+    if (item.item_info) {
+      return `
+      <div class="main__materials__subject">
+<div class="main__materials__subject__icon">
+  <i class="fa-solid fa-folder"></i>
+</div>
+
+<div  dat-id=${item._id} class="main__materials__subject__text">
+  <span>${item.item_info.subject_name }</span>
+  <span>${item.item_attachments.length} Assignments</span>
+</div>
+</div>
+
+  `
+    }
+    
+  
+
+    },{}).join(' ') -%>
+
+
+
+</div>
+
+
+
+<!-- key:_id,item_type,item_info,item_attachments,__v
+key:_id,item_type,item_attachme
+
+<div class="main__materials__subject">
+  <div class="main__materials__subject__icon">
+    <i class="fa-solid fa-folder"></i>
+  </div>
+
+  <div  dat-id=${item._id} class="main__materials__subject__text">
+    <span>${item.item_info.subject_name }</span>
+    <span>${item.item_attachments.length} Assignments</span>
+  </div>
+</div> -->

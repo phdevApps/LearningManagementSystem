@@ -1,0 +1,125 @@
+.ai-bot {
+    height: 100%;
+    position: relative;
+
+    &__info-container,
+    &__message-intput {
+        width: calc(100% - 40px);
+        position: absolute;
+        border-radius: 10px;
+        padding: 10px 20px;
+        display: flex;
+        left: 50%;
+        translate: -50%;
+    }
+
+    &__info-container {
+        box-shadow: var(--box-shadow);
+        top: 20px;
+        background-color: var(--clr-primary-100);
+        flex-direction: column;
+
+        &__header {
+            color: white;
+            gap: 10px;
+            display: flex;
+            align-items: center;
+
+            &__icon {
+                background-color: white;
+                padding: 10px;
+                border-radius: 10px;
+                color: var(--clr-primary-100);
+            }
+
+            i {
+                margin-left: auto;
+            }
+
+            p {
+                opacity: 0.6;
+                font-size: 80%;
+            }
+        }
+
+        &__content {
+            display: grid;
+            grid-template-rows: 0;
+            overflow: hidden;
+            transition: 400ms grid-template-rows;
+
+            > div {
+                margin-top: 10px;
+            }
+
+            &--active {
+                grid-template-rows: 1;
+                background-color: red;
+
+                > div {
+                    overflow: hidden;
+                }
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--clr-primary-200);
+        }
+    }
+
+    &__message-container {
+        display: flex;
+        flex-direction: column !important;
+        padding: 100px 20px 100px 20px;
+        height: 100%;
+        gap: 10px;
+        overflow-y: auto;
+
+        &__message {
+            padding: 10px;
+            line-height: 120%;
+            border-radius: 5px;
+            width: auto !important;
+
+            &[data-message-source="user"] {
+                background-color: var(--clr-primary-100);
+                color: white;
+            }
+            &[data-message-source="bot"] {
+                background-color: #ddd;
+                // color: white;
+            }
+            &[data-message-source="default"]{
+                background-color: #eee;
+                color: #adadad;
+            }
+        }
+    }
+
+    &__message-intput {
+        bottom: 20px;
+        background-color: var(--clr-secondary-100);
+        align-items: center;
+        justify-content: space-between;
+
+        > input {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            width: 80%;
+        }
+
+        &__icon {
+            background-color: var(--clr-primary-100);
+            border-radius: 10px;
+            padding: 10px;
+            color: white;
+
+            &:hover {
+                cursor: pointer;
+                background-color: var(--clr-primary-200);
+            }
+        }
+    }
+}

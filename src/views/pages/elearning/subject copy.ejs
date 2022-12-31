@@ -1,0 +1,70 @@
+<!-- content -->
+
+
+
+<div class="main__controls">
+  <span><%= path[1] %> - <%= data[0].subject_name %> </span>
+  <div class="main__controls__view">
+    <button>
+      <i class="fa-solid fa-list active"></i>
+    </button>
+    <button>
+      <i class="fa-solid fa-box"></i>
+    </button>
+  </div>
+</div>
+
+
+<div class="main__materials" style="overflow-y:scroll;">
+
+
+
+  <%- data[0].attachments.map((item,index)=>{ 
+    
+  const lectures = item.files.lecture.map((it,i)=>{
+    return `<div class="main__materials__subject__text" style="background:#fff; padding:.5rem;border-radius:.5rem;" ><span>${(it.lecture_name == 'null') ? 'no content yet' : it.lecture_name}</span><span>${(it.lecture_name == 'null') ? '' : it.date}</span>
+            </div>`
+  })  
+    
+  const sections = item.files.section.map((it,i)=>{
+    return `<div class="main__materials__subject__text" style="background:#fff; padding:.5rem;border-radius:.5rem;" ><span>${(it.section_name == 'null') ? 'no content yet' : it.section_name}</span><span>${(it.section_name == 'null') ? '' : it.date}</span>
+            </div>`
+  })  
+
+
+  
+    
+    
+    return `
+      <div class="main__materials__subject" style="">
+    <div class="main__materials__subject__icon">
+      <i class="fa-solid fa-folder"></i>
+    </div>
+
+    <div class="main__materials__subject__text" style="flex-direction:row; width:100%">
+        <span style="margin-right:.5rem;text-align:center;font-weight:bold;">week ${item.week}</span>
+        <div class="main__materials__subject__text" style="width:100%;outline:1px solid lightblue; padding:.4rem;" >
+          
+          <span>lectures</span>
+          <div class="main__materials__subject__text" >
+             ${lectures}
+          </div>
+          
+          <span>section</span>
+          <div class="main__materials__subject__text" >
+             ${sections}
+          </div>
+        
+  
+
+        </div>
+    </div>
+  </div>
+  
+    `
+    },{}).join(' ') -%>
+
+
+
+
+</div>

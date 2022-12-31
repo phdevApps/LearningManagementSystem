@@ -1,0 +1,92 @@
+<div class="container" style="flex-direction:column;height:100%;display:flex;justify-content:center;align-items:center">
+
+  <h1>File Uploader</h1>
+
+
+
+  <form id="uploadForm" dat-id=<%= data %>>
+
+    <input type="file" id="myFiles" accept=".xlsx" />
+
+    <button>Submit</button>
+  </form>
+
+  <%= JSON.stringify(data) %>
+  <select name="subjects" class="subjects" id="subjects">
+
+    <% subjects.forEach(it=>{ %>
+    <option dat-id="<%= it._id %>" value="<%= it.code %> - <%= it.subject_name %>"><%= it.code %> - <%= it.subject_name %></option>
+    <%})%>
+
+  </select>
+
+
+
+  <a href="#" class="createQuiz-btn" disabled="true" style="cursor:not-allowed;background:purple;padding:1rem;margin:2rem;border-radius:1rem;color:#fff;">submit quiz</a>
+
+
+  <h2></h2>
+  <h3></h3>
+  <script>
+    const form = document.getElementById('uploadForm')
+    // console.log('AAA')
+    const sendFiles = async () => {
+      // Object 
+      const myFiles = document.getElementById('myFiles').files
+
+      const formData = new FormData()
+
+      Object.keys(myFiles).forEach(key => {
+        formData.append(myFiles.item(key).name, myFiles.item(key))
+      })
+      console.log(formData.keys())
+      const response = await fetch(`${window.location.origin}/upload/` + "<%= data %>", {
+        method: 'POST',
+        body: formData
+      })
+
+      const json = await response.json()
+
+      const h2 = document.querySelector('h2')
+      h2.textContent = `Status: ${json?.status}`
+
+      const h3 = document.querySelector('h3')
+      h3.textContent = json?.message
+
+      if (json.status == 'success') {
+        console.log('req to parse')
+        const createQuiz_btn = document.querySelector('[class="createQuiz-btn"]')
+        createQuiz_btn.style.cursor = 'pointer'
+        console.log(window.location.href)
+
+        const parseReq = async (ids) => {
+          const res = await fetch(`${window.location.origin}/elearning/createQuiz`, {
+            method: 'POST',
+            body: JSON.stringify({
+              file: myFiles.item(0).name,
+              ids
+            })
+          })
+          return res
+        }
+
+        const ids = document.querySelector('[class="subjects"]').selectedOptions[0].getAttribute('dat-id')
+
+        createQuiz_btn.addEventListener('click', () => {
+
+
+          parseReq(ids)
+          // console.log(mes)
+
+        })
+      }
+      console.log(json)
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      sendFiles()
+    })
+  </script>
+
+</div>

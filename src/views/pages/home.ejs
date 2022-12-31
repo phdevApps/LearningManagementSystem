@@ -1,0 +1,338 @@
+<div class="main__controls">
+  <button class="edit-mode-btn">
+    <i class="fa-solid fa-grip"></i>
+  </button>
+</div>
+
+
+<div class="main__grid">
+
+
+
+  <div class="main__grid__widget main__grid__widget__scoreboard aspect-1x3-lg">
+    <h2 class="main__grid__widget__scoreboard__title">Scoreboard</h2>
+    <hr class="main__grid__widget__scoreboard__seperator">
+    <ul class="main__grid__widget__scoreboard__body">
+      <% data.forEach((it,index)=>{ %>
+
+      <li class="main__grid__widget__scoreboard__body__element">
+        <span><%= index %></span>
+        <span class="user-img-sm">
+          <% if( fs.existsSync("src/assets/images/" + it.student_info.id + ".jpg") ){ %>
+          <img  src="../imgs/<%= it.student_info.id %>.jpg">
+          <%} else {%>
+          <img  src="../imgs/user.svg">
+          <% } %>
+        </span>
+        <span><%= it.student_info.name %></span>
+        <span><%= it.student_info.id %></span>
+        <span><%= it.total_score %></span>
+      </li>
+      <% }) %>
+
+    </ul>
+
+    <!-- <i class="fa-solid fa-chart-line"></i> -->
+    <div class="handle"></div>
+  </div>
+
+  <div class="main__grid__widget main__grid__widget__tasks aspect-1x1-med">
+    <!-- <i class="fa-regular fa-calendar-check"></i> -->
+
+    <div class="main__grid__widget__tasks__header">
+      <h3>Tasks: Week 3</h3>
+      <span>4 of 6</span>
+    </div>
+    <ul class="main__grid__widget__tasks__content">
+      <li data-isDone="false">Technical Writing Report 01</li>
+      <li data-isDone="false">Microwave Sheet 01</li>
+      <li data-isDone="true">Basic Wireless Report 01</li>
+      <li data-isDone="true">Satellite Sheet 01</li>
+      <li data-isDone="true">Antenna Report 01</li>
+      <li data-isDone="true">Basic Wireless Assignment 01</li>
+    </ul>
+
+    <div class="handle"></div>
+  </div>
+
+  <div class="main__grid__widget main__grid__widget__calendar aspect-1x1-med">
+
+    <div class="main__grid__widget__calendar__header">
+      <span>
+        <i class="fa-solid fa-angle-left"></i>
+      </span>
+      <span>
+        March 2020
+      </span>
+      <span>
+        <i class="fa-solid fa-angle-right"></i>
+      </span>
+    </div>
+
+    <ul class="main__grid__widget__calendar__weeks">
+      <li>SUN</li>
+      <li>MON</li>
+      <li>TUE</li>
+      <li>WEN</li>
+      <li>THR</li>
+      <li>FRI</li>
+      <li>SAT</li>
+    </ul>
+    <ul class="main__grid__widget__calendar__days">
+      <!-- <li class="disabled">28</li> -->
+      <!-- <li class="disabled">29</li> -->
+      <li class="disabled">30</li>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      <li>13</li>
+      <li>14</li>
+
+      <li>15</li>
+      <li>16</li>
+      <li>17</li>
+      <li>18</li>
+      <li>19</li>
+      <li>20</li>
+      <li>21</li>
+
+      <li>22</li>
+      <li>23</li>
+      <li>24</li>
+      <li>25</li>
+      <li>26</li>
+      <li>27</li>
+      <li>28</li>
+
+      <li>29</li>
+      <li>30</li>
+      <li>31</li>
+      <!--
+            <li class="disabled">32</li>
+            
+            <li class="disabled">33</li>
+            <li class="disabled">34</li>
+            <li class="disabled">35</li> -->
+
+      <!-- <li class="disabled">36</li>
+            <li class="disabled">37</li>
+            <li class="disabled">38</li>
+            <li class="disabled">39</li>
+            <li class="disabled">40</li>
+            <li class="disabled">41</li>
+            <li class="disabled">42</li> 
+            -->
+    </ul>
+    <div class="main__grid__widget__calendar__indicators">
+      <div>
+        <span data-indicator="task"></span>
+        Tasks
+      </div>
+      <div>
+        <span data-indicator="quiz"></span>
+        Quiz
+      </div>
+      <div>
+        <span data-indicator="midterm"></span>
+        Midterm
+      </div>
+      <div>
+        <span data-indicator="final"></span>
+        Final
+      </div>
+    </div>
+    <!-- <i class="fa-solid fa-calendar"></i> -->
+    <div class="handle"></div>
+  </div>
+
+  <div class="main__grid__widget main__grid__widget__streaks aspect-1x6">
+    <span class="main__grid__widget__streaks__streak-day main__grid__widget__streaks__streak-day--took">
+      <div class="main__grid__widget__streaks__streak-day__icon">
+        <i class="fa-solid fa-fire-flame-curved"></i>
+      </div>
+      <div class="main__grid__widget__streaks__streak-day__day-name">SUN</div>
+    </span>
+
+    <span class="main__grid__widget__streaks__streak-day main__grid__widget__streaks__streak-day--took">
+      <div class="main__grid__widget__streaks__streak-day__icon">
+        <i class="fa-solid fa-fire-flame-curved"></i>
+      </div>
+      <div class="main__grid__widget__streaks__streak-day__day-name">MON</div>
+    </span>
+
+    <span class="main__grid__widget__streaks__streak-day main__grid__widget__streaks__streak-day--current-day">
+      <div class="main__grid__widget__streaks__streak-day__icon">
+        <i class="fa-solid fa-fire-flame-curved"></i>
+      </div>
+      <div class="main__grid__widget__streaks__streak-day__day-name">TUE</div>
+    </span>
+
+    <span class="main__grid__widget__streaks__streak-day">
+      <div class="main__grid__widget__streaks__streak-day__icon">
+        <i class="fa-solid fa-fire-flame-curved"></i>
+      </div>
+      <div class="main__grid__widget__streaks__streak-day__day-name">WEN</div>
+    </span>
+
+    <span class="main__grid__widget__streaks__streak-day">
+      <div class="main__grid__widget__streaks__streak-day__icon">
+        <i class="fa-solid fa-fire-flame-curved"></i>
+      </div>
+      <div class="main__grid__widget__streaks__streak-day__day-name">THR</div>
+    </span>
+
+    <span class="main__grid__widget__streaks__streak-day">
+      <div class="main__grid__widget__streaks__streak-day__icon">
+        <i class="fa-solid fa-fire-flame-curved"></i>
+      </div>
+      <div class="main__grid__widget__streaks__streak-day__day-name">FRI</div>
+    </span>
+
+    <span class="main__grid__widget__streaks__streak-day">
+      <div class="main__grid__widget__streaks__streak-day__icon">
+        <i class="fa-solid fa-fire-flame-curved"></i>
+      </div>
+      <div class="main__grid__widget__streaks__streak-day__day-name">SAT</div>
+    </span>
+
+    <span class="main__grid__widget__streaks__streaks-count">12</span>
+
+    <div class="handle"></div>
+  </div>
+
+  <div class="main__grid__widget main__grid__widget__bus-availability aspect-1x3-sm">
+    <div class="main__grid__widget__bus-availability__icon">
+      <i class="fa-solid fa-bus-simple"></i>
+    </div>
+
+    <div class="bus-wrapper">
+      <h2 class="main__grid__widget__bus-availability__title">Ras El-Bar</h2>
+      <div class="main__grid__widget__bus-availability__status">
+        <span data-availability="available"></span>
+        <span>Available</span>
+      </div>
+    </div>
+
+    <!-- <i class="fa-solid fa-van-shuttle"></i> -->
+    <div class="handle"></div>
+  </div>
+
+  <div class="main__grid__widget main__grid__widget__daily_updated aspect-1x6">
+    <ul class="main__grid__widget__daily_updated__list">
+      <li class="main__grid__widget__daily_updated__list__item">
+        <h4 class="main__grid__widget__daily_updated__list__item__day">SUN</h4>
+        <h4 class="main__grid__widget__daily_updated__list__item__date">07</h4>
+        <h4 class="main__grid__widget__daily_updated__list__item__status"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6">
+            <circle id="Ellipse_143" data-name="Ellipse 143" cx="3" cy="3" r="3" fill="#707070" />
+          </svg>
+        </h4>
+      </li>
+      <li class="main__grid__widget__daily_updated__list__item">
+        <h4 class="main__grid__widget__daily_updated__list__item__day">MON</h4>
+        <h4 class="main__grid__widget__daily_updated__list__item__date">08</h4>
+        <h4 class="main__grid__widget__daily_updated__list__item__status"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6">
+            <circle id="Ellipse_143" data-name="Ellipse 143" cx="3" cy="3" r="3" fill="#707070" />
+          </svg>
+        </h4>
+      </li>
+      <li class="main__grid__widget__daily_updated__list__item">
+        <h4 class="main__grid__widget__daily_updated__list__item__day">TUE</h4>
+        <h4 class="main__grid__widget__daily_updated__list__item__date">09</h4>
+        <h4 class="main__grid__widget__daily_updated__list__item__status"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6">
+            <circle id="Ellipse_143" data-name="Ellipse 143" cx="3" cy="3" r="3" fill="#707070" />
+          </svg>
+        </h4>
+      </li>
+      <li class="main__grid__widget__daily_updated__list__item   main__grid__widget__daily_updated__list__item--on main__grid__widget__daily_updated__list__item--active">
+        <h4 class="main__grid__widget__daily_updated__list__item__day">WEN</h4>
+        <h4 class="main__grid__widget__daily_updated__list__item__date">10</h4>
+        <h4 class="main__grid__widget__daily_updated__list__item__status"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6">
+            <circle id="Ellipse_143" data-name="Ellipse 143" cx="3" cy="3" r="3" fill="#707070" />
+          </svg>
+        </h4>
+      </li>
+      <li class="main__grid__widget__daily_updated__list__item  main__grid__widget__daily_updated__list__item--on">
+        <h4 class="main__grid__widget__daily_updated__list__item__day">THR</h4>
+        <h4 class="main__grid__widget__daily_updated__list__item__date">11</h4>
+        <h4 class="main__grid__widget__daily_updated__list__item__status"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6">
+            <circle id="Ellipse_143" data-name="Ellipse 143" cx="3" cy="3" r="3" fill="#707070" />
+          </svg>
+        </h4>
+      </li>
+      <li class="main__grid__widget__daily_updated__list__item">
+        <h4 class="main__grid__widget__daily_updated__list__item__day">FRI</h4>
+        <h4 class="main__grid__widget__daily_updated__list__item__date">12</h4>
+        <h4 class="main__grid__widget__daily_updated__list__item__status"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6">
+            <circle id="Ellipse_143" data-name="Ellipse 143" cx="3" cy="3" r="3" fill="#707070" />
+          </svg>
+        </h4>
+      </li>
+      <li class="main__grid__widget__daily_updated__list__item   main__grid__widget__daily_updated__list__item--on">
+        <h4 class="main__grid__widget__daily_updated__list__item__day">SAT</h4>
+        <h4 class="main__grid__widget__daily_updated__list__item__date">13</h4>
+        <h4 class="main__grid__widget__daily_updated__list__item__status"><svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6">
+            <circle id="Ellipse_143" data-name="Ellipse 143" cx="3" cy="3" r="3" fill="#707070" />
+          </svg>
+        </h4>
+      </li>
+    </ul>
+    <div class="handle"></div>
+  </div>
+  <div class="main__grid__widget main__grid__widget__empty aspect-1x3-sm">
+    <div class="main__grid__widget__empty__container">
+      <span>&plus;</span>
+      <span>Add Widget</span>
+    </div>
+    <!-- <i class="fa-solid fa-bicycle"></i> -->
+    <div class="handle"></div>
+  </div>
+
+  <div class="main__grid__widget aspect-1x3-sm">
+    <i class="fa-solid fa-motorcycle"></i>
+    <div class="handle"></div>
+  </div>
+
+  <div class="main__grid__widget aspect-1x3-sm">
+    <i class="fa-solid fa-cake-candles"></i>
+    <div class="handle"></div>
+  </div>
+
+  <div class="main__grid__widget aspect-1x3-sm">
+    <i class="fa-solid fa-person-hiking"></i>
+    <div class="handle"></div>
+  </div>
+
+  <div class="main__grid__widget aspect-1x3-sm">
+    <i class="fa-solid fa-chart-simple"></i>
+    <div class="handle"></div>
+  </div>
+
+  <div class="main__grid__widget aspect-1x3-sm">
+    <i class="fa-solid fa-person-hiking"></i>
+    <div class="handle"></div>
+  </div>
+
+  <div class="main__grid__widget aspect-1x3-sm">
+    <i class="fa-solid fa-chart-simple"></i>
+    <div class="handle"></div>
+  </div>
+
+  <div class="main__grid__widget aspect-1x3-sm">
+    <i class="fa-solid fa-person-hiking"></i>
+    <div class="handle"></div>
+  </div>
+
+  <div class="main__grid__widget aspect-1x3-sm">
+    <i class="fa-solid fa-chart-simple"></i>
+    <div class="handle"></div>
+  </div>

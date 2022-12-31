@@ -1,0 +1,164 @@
+body.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-white);
+    position: relative;
+    background: url(/imgs/delta-univ.jpg) no-repeat center;
+    background-size:cover;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background: rgb(0 0 0 / 0.4);
+    position: absolute;
+    z-index: -1;
+}
+
+.unv-logo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+    padding: 20px 0 10px 0;
+
+    &__icon {
+        width: 50px;
+        height: 50px;
+
+        img {
+            border-radius: 10px;
+        }
+    }
+
+    &__text {
+        font-weight: bold;
+        color: var(--clr-white);
+    }
+}
+
+.body {
+    flex: 6;
+    display: flex;
+    width: 100%;
+
+    &__text {
+        width: 60%;
+        padding: 10px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        color: var(--clr-white);
+        padding-left: 40px;
+
+        h2 {
+            font-size: 4rem;
+        }
+
+        p {
+            margin-top: 10px;
+            width: 80%;
+        }
+    }
+
+    &__form-wrapper {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__form {
+            width: min(400px, 80%);
+            background-color: white;
+            height: min(340px, 80%);
+            border-radius: 5%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: calc(var(--padding) * 2);
+
+            &__controls {
+                margin: 20px 0 10px 0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                label {
+                    padding: 10px;
+                    flex: 1;
+                    text-align: center;
+                    border-bottom: #eee 3px solid;
+                    cursor: pointer;
+                }
+
+                input[type="radio"] {
+                    display: none;
+
+                    &:checked + label {
+                        border-bottom: 3px solid var(--clr-primary-100);
+                    }
+                }
+            }
+
+            > input {
+                border: none;
+                width: 100%;
+                padding: 10px;
+                margin-top: 10px;
+                border-radius: 5px;
+            }
+
+            input[placeholder] {
+                background-color: var(--clr-secondary-100);
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            input[type="submit"] {
+                margin-top: 20px;
+                background-color: var(--clr-primary-100);
+                color: var(--clr-white);
+                cursor: pointer;
+
+                &:hover {
+                    background-color: var(--clr-primary-200);
+                }
+            }
+        }
+    }
+
+    @media (max-width: 700px) {
+        flex-direction: column;
+
+        &__text {
+            height: 25%;
+            width: 100%;
+            align-items: center;
+            padding-left: 0;
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+
+        &__form-wrapper {
+            width: 100%;
+            flex: 1;
+        }
+    }
+}

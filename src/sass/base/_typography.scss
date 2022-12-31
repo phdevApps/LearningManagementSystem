@@ -1,0 +1,21 @@
+a,
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: var(--clr-black);
+}
+
+a {
+    cursor: pointer;
+}
+
+html {
+    font-size: 100%;
+    font-family: sans-serif;
+}
+
+.submitted {
+    // outline: 2px solid green;
+    color: green;
+}

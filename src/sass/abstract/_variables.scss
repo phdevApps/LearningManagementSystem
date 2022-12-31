@@ -1,0 +1,34 @@
+:root {
+    //grid system
+    --p: 40px;
+    --grid-gap: calc(var(--p) / 2);
+    --header-height: 50px;
+    --controls-height: 40px;
+
+    // border raduis
+    --border-raduis-sm: 5px;
+    --border-raduis-xmed: 8px;
+    --border-raduis-med: 10px;
+    --border-raduis-lg: 20px;
+    --border-raduis-xlg: 40px;
+
+    // box shadow
+    --box-shadow: 0 0 5px 1px rgba(0 0 0 / 0.2);
+    // --box-shadow: 0px 5px 4px -7px rgba(0, 0, 0, 0.75);
+
+    --box-shadow-ds: 0 0 0 1000px rgba(0 0 0 / 0.2); // box-shadow-drop-shadow
+
+    // laytout
+    --seperator-height: 1px;
+
+    --sidebar-width: 250px;
+    --sidebar-width-collapsed: 40px;
+    --padding: 10px;
+    --padding-med: 20px;
+    --gap: 10px;
+    --transition-duration: 500ms;
+    --size-xsm: 20px;
+    --size-sm: 30px;
+    --size-xmed: 35px;
+    --size-med: 40px;
+}

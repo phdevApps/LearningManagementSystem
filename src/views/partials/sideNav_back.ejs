@@ -1,0 +1,152 @@
+<aside class="sidebar">
+
+
+
+  <div class="sidebar__logobox">
+
+    <div class="sidebar__logobox__logo">12</div>
+
+    <div class="sidebar__logobox__logo_description">
+      <a href="">Learning Management System</a>
+    </div>
+
+    <div class="sidebar__logobox__toggle">
+      <span class="fa-fw select-all far"></span>
+    </div>
+
+
+  </div>
+
+
+  <div class="sidebar__path">
+    <a class="link" href=''>/<%= location %></a>
+  </div>
+
+
+
+  <div class="sidebar__innersidebar">
+
+
+    <ul class="sidebar__innersidebar__sideNav">
+
+
+
+      <li class="sidebar__innersidebar__sideNav__sidenavitem  sidebar__innersidebar__sideNav__sidenavitem--empty <%- location?.split('.')[0]?.toLowerCase() == 'home'  ? 'sidebar__innersidebar__sideNav__sidenavitem--active' : '' -%>">
+
+
+
+
+
+        <div class="sidebar__innersidebar__sideNav__sidenavitem__header">
+
+          <a href="/home" class="link">
+
+            <span class="fa-fw select-all far"></span>
+            <div class="text">home</div>
+          </a>
+          <span class="fa-fw select-all far angle-up"></span>
+
+        </div>
+
+        <ul class="sidebar__innersidebar__sideNav__sidenavitem__sub_list">
+        </ul>
+      </li>
+
+
+
+      <li class="sidebar__innersidebar__sideNav__sidenavitem sidebar__innersidebar__sideNav__sidenavitem--empty <%- location?.split('.')[0]?.toLowerCase() == 'scoreboard'  ? 'sidebar__innersidebar__sideNav__sidenavitem--active' : '' -%>">
+        <div class="sidebar__innersidebar__sideNav__sidenavitem__header">
+
+          <a href="/scoreboard" class="link">
+            <span class="fa-fw select-all far"></span>
+            <div class="text">Scoreboard</div>
+          </a>
+
+          <span class="fa-fw select-all far angle-up"></span>
+        </div>
+
+        <ul class="sidebar__innersidebar__sideNav__sidenavitem__sub_list">
+        </ul>
+
+      </li>
+
+
+
+
+
+      <li class="sidebar__innersidebar__sideNav__sidenavitem <%- location?.split('.')[0]?.toLowerCase() == 'elearning'  ?  'sidebar__innersidebar__sideNav__sidenavitem--expanded'  : '' -%>">
+
+        <div class="sidebar__innersidebar__sideNav__sidenavitem__header">
+
+          <a href="" class="link">
+            <span class="fa-fw select-all far">
+
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+                <g id="Group_501" data-name="Group 501" transform="translate(-924 -6612)">
+                  <g id="Rectangle_758" data-name="Rectangle 758" transform="translate(924 6612)" fill="none" stroke="#1c1d21" stroke-width="1">
+                    <rect width="7" height="7" rx="2" stroke="none" />
+                    <rect x="0.5" y="0.5" width="6" height="6" rx="1.5" fill="none" />
+                  </g>
+                  <g id="Rectangle_761" data-name="Rectangle 761" transform="translate(932 6612)" fill="none" stroke="#1c1d21" stroke-width="1">
+                    <rect width="7" height="7" rx="2" stroke="none" />
+                    <rect x="0.5" y="0.5" width="6" height="6" rx="1.5" fill="none" />
+                  </g>
+                  <g id="Rectangle_759" data-name="Rectangle 759" transform="translate(924 6620)" fill="none" stroke="#1c1d21" stroke-width="1">
+                    <rect width="7" height="7" rx="2" stroke="none" />
+                    <rect x="0.5" y="0.5" width="6" height="6" rx="1.5" fill="none" />
+                  </g>
+                  <g id="Rectangle_760" data-name="Rectangle 760" transform="translate(932 6620)" fill="none" stroke="#1c1d21" stroke-width="1">
+                    <rect width="7" height="7" rx="2" stroke="none" />
+                    <rect x="0.5" y="0.5" width="6" height="6" rx="1.5" fill="none" />
+                  </g>
+                </g>
+              </svg>
+
+            </span>
+            <div class="text">E-learning</div>
+          </a>
+          <span class="fa-fw select-all far angle-up"></span>
+
+        </div>
+
+        <ul class="sidebar__innersidebar__sideNav__sidenavitem__sub_list">
+          <li><a <%- location?.split('.')[1]?.toLowerCase() == 'quizzes'  ?  'class="item--active"'  : '' -%> href="/elearning/quizzes">Quizzes</a></li>
+          <li><a <%- location?.split('.')[1]?.toLowerCase() == 'assignments'  ?  'class="item--active"'  : '' -%> href="/elearning/assignments">Assignments</a></li>
+          <li><a <%- location?.split('.')[1]?.toLowerCase() == 'materials'  ?  'class="item--active"'  : '' -%> class="" href="/elearning/materials">Materials</a></li>
+          <li><a <%- location?.split('.')[1]?.toLowerCase() == 'discussions'  ?  'class="item--active"'  : '' -%> href="/elearning/discussions">Discussions</a></li>
+          <li><a <%- location?.split('.')[1]?.toLowerCase() == 'meetings'  ?  'class="item--active"'  : '' -%> href="/elearning/meetings">Meetings</a></li>
+        </ul>
+      </li>
+
+
+
+
+      <li class="sidebar__innersidebar__sideNav__sidenavitem sidebar__innersidebar__sideNav__sidenavitem--empty  <%- location?.split('.')[0]?.toLowerCase() == 'semester_work'  ? 'sidebar__innersidebar__sideNav__sidenavitem--active' : '' -%>">
+        <div class="sidebar__innersidebar__sideNav__sidenavitem__header">
+
+          <a href="/semester_work" class="link">
+            <span class="fa-fw select-all far"></span>
+            <div class="text">Semester Work</div>
+          </a>
+          <span class="fa-fw select-all far angle-up"></span>
+
+        </div>
+
+
+        <ul class="sidebar__innersidebar__sideNav__sidenavitem__sub_list">
+
+        </ul>
+      </li>
+
+
+    </ul>
+
+    <div class="sidebar__innersidebar__dynamic_Island">
+      dynamic Island
+    </div>
+
+
+  </div>
+
+</aside>

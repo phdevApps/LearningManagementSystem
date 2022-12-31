@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/imgs/lms-icon.png">
+
+    <!-- ::::::: Vendors (imports) ::::::: -->
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="/vendors/fontawesome/css/all.min.css">
+    <!-- <script src="vendors/fontawesome/all.min.js" defer></script> -->
+
+    <!-- sortable.js -->
+    <script src="/vendors/sortable-js/Sortable.min.js" defer></script>
+
+
+    <!-- ::::::: style files (css) ::::::: -->
+    <link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- ::::::: script files (js) ::::::: -->
+
+     <script src="/js/script.js" defer></script>
+
+    <title>LMS | <%= current_page.toUpperCase().replaceAll(/elearning/ig,'').replaceAll(/\.|\_/ig,' ') %></title>
+
+</head>
+
+<body class="<%= current_page.toUpperCase().replaceAll(/\./ig,'__').toLowerCase() %>">

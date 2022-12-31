@@ -1,0 +1,101 @@
+<div class="page__elearning__materials">
+
+
+  <h2 class="page__elearning__materials__title">
+    Others </h2>
+
+
+  <div class="page__elearning__materials__other">
+
+    <div class="page__elearning__materials__other__sources">
+
+      <div class="other_sources__img">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="84.587" height="59.087" viewBox="0 0 84.587 59.087">
+          <path id="Icon_metro-books" data-name="Icon metro-books" d="M19.805,8.571H5.033a2.469,2.469,0,0,0-2.462,2.462V65.2a2.469,2.469,0,0,0,2.462,2.462H19.805A2.469,2.469,0,0,0,22.267,65.2V11.033a2.469,2.469,0,0,0-2.462-2.462ZM17.343,23.343H7.5V18.419h9.848v4.924ZM44.425,8.571H29.653a2.469,2.469,0,0,0-2.462,2.462V65.2a2.469,2.469,0,0,0,2.462,2.462H44.425A2.469,2.469,0,0,0,46.887,65.2V11.033a2.469,2.469,0,0,0-2.462-2.462ZM41.963,23.343H32.115V18.419h9.848ZM61.435,12.378,48.243,19.025a2.469,2.469,0,0,0-1.091,3.306L69.308,66.3A2.469,2.469,0,0,0,72.614,67.4l13.192-6.647A2.469,2.469,0,0,0,86.9,57.442L64.741,13.469a2.469,2.469,0,0,0-3.306-1.091ZM73.968,65.2a2.462,2.462,0,1,1-2.462-2.462A2.462,2.462,0,0,1,73.968,65.2Z" transform="translate(-2.571 -8.571)" fill="#5350f7" />
+        </svg>
+
+      </div>
+
+      <h1 class="other_sources__title">Question Bank</h1>
+
+    </div>
+
+    <div class="page__elearning__materials__other__sources">
+
+      <div class="other_sources__img">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="50.957" height="64.087" viewBox="0 0 50.957 64.087">
+          <path id="Icon_feather-bookmark" data-name="Icon feather-bookmark" d="M53.457,63.587,30.478,47.174,7.5,63.587V11.065A6.565,6.565,0,0,1,14.065,4.5H46.891a6.565,6.565,0,0,1,6.565,6.565Z" transform="translate(-5 -2)" fill="none" stroke="#5350f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+        </svg>
+
+      </div>
+
+      <h1 class="other_sources__title">Pinned Files</h1>
+
+    </div>
+
+
+    <div class="page__elearning__materials__other__sources">
+
+      <div class="other_sources__img">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="52.27" height="64.087" viewBox="0 0 52.27 64.087">
+          <g id="Icon_feather-book" data-name="Icon feather-book" transform="translate(2.5 2.5)">
+            <path id="Path_48" data-name="Path 48" d="M6,32.886A7.386,7.386,0,0,1,13.386,25.5H53.27" transform="translate(-6 18.815)" fill="none" stroke="#5350f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+            <path id="Path_49" data-name="Path 49" d="M13.386,3H53.27V62.087H13.386A7.386,7.386,0,0,1,6,54.7V10.386A7.386,7.386,0,0,1,13.386,3Z" transform="translate(-6 -3)" fill="none" stroke="#5350f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+          </g>
+        </svg>
+
+
+      </div>
+
+      <h1 class="other_sources__title">Shared Files</h1>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <h2 class="page__elearning__materials__title">
+    Materials </h2>
+
+
+
+
+  <ul class="page__elearning__materials__list">
+
+
+    <%- data.map((item,index)=>{ return `
+    
+    
+       <li class="page__elearning__materials__list__item">
+ 
+      <div  class="page__elearning__materials__list__item__head" >
+     <div class="page__elearning__materials__list__item__img">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="19.55" height="14.663" viewBox="0 0 19.55 14.663">
+          <path id="Icon_awesome-folder-minus" data-name="Icon awesome-folder-minus" d="M17.717,6.944H10.386L7.942,4.5H1.833A1.833,1.833,0,0,0,0,6.333v11a1.833,1.833,0,0,0,1.833,1.833H17.717A1.833,1.833,0,0,0,19.55,17.33V8.777A1.833,1.833,0,0,0,17.717,6.944Zm-3.666,6.415a.611.611,0,0,1-.611.611H6.109a.611.611,0,0,1-.611-.611v-.611a.611.611,0,0,1,.611-.611h7.331a.611.611,0,0,1,.611.611Z" transform="translate(0 -4.5)" fill="#5350f7" />
+        </svg>
+
+      </div>
+
+     <div>
+         <h3 class="page__elearning__materials__list__item__head__name" >${item.code.toUpperCase() + '     -       ' + item.subject_name}</h3>
+         <h3 class="page__elearning__materials__list__item__head__score"></h3>
+      </div>
+
+    
+
+    </li>
+    `
+    },{}) -%>
+
+ 
+
+
+  </ul>
+</div>

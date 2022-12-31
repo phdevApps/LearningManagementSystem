@@ -1,0 +1,80 @@
+        <main class="main-scoreboard">
+
+          <!-- content -->
+          <div class="main-scoreboard__scoreboard">
+            <h2 class="main-scoreboard__scoreboard__wave-number">Wave <span>1</span></h2>
+            <h1 class="main-scoreboard__scoreboard__wave-name">Warming Up</h1>
+            <h3 class="main-scoreboard__scoreboard__wave-slogen">Lorem ipsum dolor sit amet.</h3>
+            <img class="main-scoreboard__scoreboard__img" src="../imgs/phone.svg">
+          </div>
+
+
+          <div class="main-scoreboard__table">
+            <table>
+
+
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Student Name</th>
+                  <th>Faculty</th>
+                  <th>Level</th>
+                  <th>ID</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <% data.forEach((it,index)=>{ %>
+
+                <tr dat-id="<%= it.student_info._id %>">
+                  <td><%= index %></td>
+                  <td class="name">
+
+                    <div class="img">
+
+
+
+                      <% if( fs.existsSync("src/assets/images/" + it.student_info.id + ".jpg") ){ %>
+                      <img src="../imgs/<%= it.student_info.id %>.jpg">
+                      <%} else {%>
+                      <img src="../imgs/user.svg">
+                      <% } %>
+
+                    </div>
+                    <span><%= it.student_info.name %></span>
+                  </td>
+                  <td><%= it.student_info.faculty %></td>
+                  <td><%= it.student_info.level %></td>
+                  <td><%= it.student_info.id %></td>
+                  <td><%= it.total_score %></td>
+                </tr>
+                <% }) %>
+
+
+
+              </tbody>
+            </table>
+          </div>
+
+
+
+          <!-- preloader -->
+          <!-- <div class="preloader-overlay">
+                <div class="lds-facebook">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div> -->
+
+        </main>
+
+        <div class="student-score-profile">
+
+         
+
+        </div>
+
+        <div class="banner-overlay"></div>

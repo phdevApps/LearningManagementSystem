@@ -1,0 +1,85 @@
+
+<!-- content -->
+
+<div class="main__controls">
+  <span>Quezzes</span>
+  <div class="main__controls__view">
+    <button>
+      <i class="fa-solid fa-list active"></i>
+    </button>
+    <button>
+      <i class="fa-solid fa-box"></i>
+    </button>
+  </div>
+</div>
+
+
+<div class="main__materials">
+
+
+  <%- data.map((item,index)=>{ return `
+      <div class="main__materials__subject">
+    <div class="main__materials__subject__icon">
+      <i class="fa-solid fa-folder"></i>
+    </div>
+
+    <div  dat-id=${item._id} class="main__materials__subject__text">
+      <span>${item.item_info.subject_name }</span>
+      <span>${item.item_attachments.length} Quezzes</span>
+    </div>
+  </div>
+  
+    `
+    },{}).join(' ') -%>
+
+
+
+</div>
+
+
+<!-- preloader -->
+<!-- <div class="preloader-overlay">
+                <div class="lds-facebook">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div> -->
+
+
+
+<!--
+
+
+    <%- data.map((item,index)=>{ return `
+    
+    
+       <li class="page__elearning__materials__list__item">
+      
+
+
+      <div  class="page__elearning__materials__list__item__head" >
+
+      <div class="page__elearning__materials__list__item__img">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="19.55" height="14.663" viewBox="0 0 19.55 14.663">
+          <path id="Icon_awesome-folder-minus" data-name="Icon awesome-folder-minus" d="M17.717,6.944H10.386L7.942,4.5H1.833A1.833,1.833,0,0,0,0,6.333v11a1.833,1.833,0,0,0,1.833,1.833H17.717A1.833,1.833,0,0,0,19.55,17.33V8.777A1.833,1.833,0,0,0,17.717,6.944Zm-3.666,6.415a.611.611,0,0,1-.611.611H6.109a.611.611,0,0,1-.611-.611v-.611a.611.611,0,0,1,.611-.611h7.331a.611.611,0,0,1,.611.611Z" transform="translate(0 -4.5)" fill="#5350f7" />
+        </svg>
+
+      </div>
+            <h3 class="page__elearning__materials__list__item__head__name" >${item.item_info.subject_name }</h3>
+            <h3 class="page__elearning__materials__list__item__head__score"></h3>
+      </div>
+
+      <div class="page__elearning__materials__list__item__body">
+<ul  class="page__elearning__materials__list__item__head__sub">
+        ${item.item_attachments.map((subitem,index)=>'<li class="page__elearning__materials__list__item__head__sub__name" >' + subitem.subitem_name.replaceAll(/\,/ig,'') + ' </li>')}
+</ul>
+      </div>
+       
+    </li>
+    `
+    
+    
+    },{}) -%>
+-->

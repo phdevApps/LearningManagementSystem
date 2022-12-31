@@ -1,0 +1,169 @@
+<style>
+
+</style>
+
+<div class="container" style="flex-direction:column;height:100%;display:flex;justify-content:center;align-items:center">
+
+  <h1>File Uploader</h1>
+
+
+  <div action="#" style="width:100%;height:100%;flex-direction:column;height:100%;display:flex;justify-content:center;align-items:center" dat-id=<%= data %>>
+
+
+    <input type="file" id="myFiles" accept=".xlsx" style="background:var(--clr-primary-100);color:#fff;border-radius:14px;" />
+    <br>
+    <button class="parseXlsx_btn" style="width:8rem;background:var(--clr-primary-100);padding:0.5rem;margin:0rem;border-radius:1rem;color:#fff;">read</button>
+
+    <br>
+    <select name="questions" id="questions" style="border:none;outline:none;color:var(--clr-primary-100);border-radius:14px;padding:.4rem;border:2px solid var(--clr-primary-100)">
+    </select>
+    <br>
+
+    <div>
+      <label for="quiz_name">quiz name:</label>
+      <input type="text" placeholder="enter title" id="quiz_name" style="outline:none;border:none;border-bottom:2px solid var(--clr-primary-100)" />
+    </div>
+
+    <br>
+
+
+    <select name="subjects" class="subjects" id="subjects" style="border:none;outline:none;color:var(--clr-primary-100);border-radius:14px;padding:.4rem;border:2px solid var(--clr-primary-100)">
+
+      <% subjects.forEach(it=>{ %>
+      <option dat-id="<%= it._id %>" value="<%= it.code %> - <%= it.subject_name %>"><%= it.code %> - <%= it.subject_name %></option>
+      <%})%>
+
+    </select>
+
+    <br>
+
+    <a href="#" class="createQuiz-btn" disabled="true" style="cursor:not-allowed;background:purple;padding:1rem;margin:2rem;border-radius:1rem;color:#fff;">submit quiz</a>
+    <label for="" class="status" style="color:green"></label>
+  </div>
+
+
+
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+<script>
+  const parseExcel = function(file) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      var data = e.target.result;
+      var workbook = XLSX.read(data, {
+        type: 'binary'
+      });
+
+      workbook.SheetNames.forEach(function(sheetName) {
+        // Here is your object
+        var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+        // var json_object = JSON.stringify(XL_row_object);
+        var json_object = XL_row_object;
+
+
+
+
+        const obj = json_object.map((it, i, x) => {
+          return {
+            "id": i,
+            "title": it['question'],
+
+            "answers": [
+              it["a"],
+              it["b"],
+              it["c"],
+              it["d"]
+            ],
+
+            "right_answer": it["correct answer"],
+            "isFlagged": false,
+            "isAnswered": false,
+          }
+        }, {})
+
+
+
+        const htmlData = json_object.map((it, i) => {
+          // console.log(it)
+          return `<option value="">${it['question']} : ${it['a']} : ${it['b']} : ${it['c']} : ${it['d']}    </option>`
+        }, {}).join(' ')
+
+        document.querySelector('[id="questions"]').insertAdjacentHTML('beforeEnd', htmlData)
+
+        const createQuiz_btn = document.querySelector('[class="createQuiz-btn"]')
+        createQuiz_btn.style.cursor = 'pointer'
+
+        const insertData = async () => {
+
+
+
+          var myHeaders = new Headers();
+          myHeaders.append("Content-Type", "application/json");
+
+          var raw = JSON.stringify({
+            quiz_name: document.querySelector('[id="quiz_name"]').value,
+            subject_info: document.querySelector('[class="subjects"]').options[document.querySelector('[class="subjects"]').selectedIndex].getAttribute('dat-id'),
+            quiz_id: Date.now(),
+            questions: obj
+          });
+
+          console.log(raw)
+
+          var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+          };
+
+          fetch(window.location.href, requestOptions)
+            .then(response => response.json())
+            .then(result => document.querySelector('[class="status"]').innerText = result.status)
+            .catch(error => console.log('error', error));
+        }
+
+
+        createQuiz_btn.addEventListener('click', () => {
+          e.preventDefault()
+          console.log('dd')
+
+          insertData()
+
+        })
+
+
+      })
+
+
+    };
+
+    reader.onerror = function(ex) {
+      console.log(ex);
+    };
+
+    reader.readAsBinaryString(file);
+  };
+
+
+
+  // const myFiles =
+
+
+
+
+  document.querySelector('.parseXlsx_btn').addEventListener('click', () => {
+    parseExcel(document.getElementById('myFiles').files[0])
+  })
+
+
+
+  const interv = setInterval(() => {
+    document.querySelector('[class="status"]').innerText.length > 0 ? document.querySelector('[class="status"]').innerText = '' : ''
+  }, 3000)
+
+
+</script>
