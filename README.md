@@ -4,9 +4,10 @@
    npm install --legacy-peer-deps
    ```
 **Import the Json files to MongoDB compass:**
-   ```bash
-MongoDB compass
-   ```
+
+MongoDB compass 
+Files in the directory "_reback_BackUP"
+
 **Start the Application:**
    ```bash
    npm start
